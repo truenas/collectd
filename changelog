@@ -1,0 +1,5 @@
+collectd (5.99.0-1) unstable; urgency=medium
+
+  * Add custom TrueNAS patches
+
+ -- Vladimir Vinogradenko <vladimirv@ixsystems.com>  Wed, 1 Sep 2021 15:19:00 +0200
