@@ -55,3 +55,4 @@
 +
    chain_name = global_option_get("PreCacheChain");
    pre_cache_chain = fc_chain_get_by_name(chain_name);
+ 

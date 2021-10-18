@@ -13,4 +13,7 @@ rm collectd_$VERSION.orig.tar.xz
 cp aggregation-cpu.patch debian/patches
 echo 'aggregation-cpu.patch' >> debian/patches/series
 
+cp logs.patch debian/patches
+echo 'logs.patch' >> debian/patches/series
+
 echo -e "$(cat changelog)\n\n$(cat debian/changelog)" > debian/changelog
