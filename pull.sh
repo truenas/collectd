@@ -13,6 +13,8 @@ rm collectd_$VERSION.orig.tar.xz
 cp aggregation-cpu.patch debian/patches
 echo 'aggregation-cpu.patch' >> debian/patches/series
 
+sed -i 's/, default-jre-headless//g' debian/control
+
 cp logs.patch debian/patches
 echo 'logs.patch' >> debian/patches/series
 
