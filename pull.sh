@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 VERSION=5.12.0
-REVISION=9
+REVISION=11
 
 wget http://deb.debian.org/debian/pool/main/c/collectd/collectd_$VERSION-$REVISION.debian.tar.xz
 tar xf collectd_$VERSION-$REVISION.debian.tar.xz
