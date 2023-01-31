@@ -1,14 +1,19 @@
 #!/bin/bash -ex
 VERSION=5.12.0
 REVISION=11
+BASEURL="https://launchpad.net/debian/+archive/primary/+sourcefiles/collectd/$VERSION-$REVISION"
 
-wget http://deb.debian.org/debian/pool/main/c/collectd/collectd_$VERSION-$REVISION.debian.tar.xz
-tar xf collectd_$VERSION-$REVISION.debian.tar.xz
-rm collectd_$VERSION-$REVISION.debian.tar.xz
+# download revision source
+REVISION_FILE="collectd_$VERSION-$REVISION.debian.tar.xz"
+wget "$BASEURL/$REVISION_FILE"
+tar xf $REVISION_FILE
+rm $REVISION_FILE
 
-wget http://deb.debian.org/debian/pool/main/c/collectd/collectd_$VERSION.orig.tar.xz
-tar xf collectd_$VERSION.orig.tar.xz --strip 1
-rm collectd_$VERSION.orig.tar.xz
+# download version source
+VERSION_FILE="collectd_$VERSION.orig.tar.xz"
+wget "$BASEURL/$VERSION_FILE"
+tar xf $VERSION_FILE --strip 1
+rm $VERSION_FILE
 
 cp aggregation-cpu.patch debian/patches
 echo 'aggregation-cpu.patch' >> debian/patches/series
