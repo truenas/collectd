@@ -1,15 +1,17 @@
 #!/bin/bash -ex
-BASEURL="https://launchpad.net/debian/+archive/primary/+sourcefiles/collectd/5.12.0-11/"
+VERSION=5.12.0
+REVISION=11
+BASEURL="https://launchpad.net/debian/+archive/primary/+sourcefiles/collectd/$VERSION-$REVISION"
 
 # download revision source
-REVISION_FILE="collectd_5.12.0-11.debian.tar.xz"
-wget $BASEURL$REVISION_FILE
+REVISION_FILE="collectd_$VERSION-$REVISION.debian.tar.xz"
+wget "$BASEURL/$REVISION_FILE"
 tar xf $REVISION_FILE
 rm $REVISION_FILE
 
 # download version source
-VERSION_FILE="collectd_5.12.0.orig.tar.xz"
-wget $BASEURL$VERSION_FILE
+VERSION_FILE="collectd_$VERSION.orig.tar.xz"
+wget "$BASEURL/$VERSION_FILE"
 tar xf $VERSION_FILE --strip 1
 rm $VERSION_FILE
 
