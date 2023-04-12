@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 VERSION=5.12.0
-REVISION=11
+REVISION=14
 BASEURL="https://launchpad.net/debian/+archive/primary/+sourcefiles/collectd/$VERSION-$REVISION"
 
 # download revision source
